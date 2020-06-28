@@ -18,7 +18,7 @@ exports.config = {
     //
     specs: [
         './test/elements.js',
-        './test/defaultfunctionality.js'
+        // './test/defaultfunctionality.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -66,7 +66,10 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+
+    // logLevel: 'info',
+    logLevel: 'silent',
+
     //
     // Set specific log levels per logger
     // loggers:
