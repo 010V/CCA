@@ -1,5 +1,6 @@
 const general = require ('../data/selectors.json').general;
-const values = require('./../data/expected.json');
+const values = require('./../data/expected.json').general;
+const selectorCnt = require ('../data/selectors.json').counter;
 
 describe('Complex Counter App', function () {
     describe('Getting to the page', function () {
@@ -49,39 +50,60 @@ describe('Complex Counter App', function () {
 
         it('TC-009 Header = Counter', function () {
             const actual = $(general.header).getText();
-            expect(actual).toEqual(values.general.header);
+            expect(actual).toEqual(values.header);
         })
 
         it('TC-010 Total Result', function () {
             const actual = $(general.totalResult).getText();
-            expect(actual).toEqual(values.general.totalResult);
+            expect(actual).toEqual(values.totalResult);
         })
 
         it('TC-011 Add Name Field', function () {
             const actual = $(general.addNameField).getValue();
-            expect(actual).toEqual(values.general.addNameField);
+            expect(actual).toEqual(values.addNameField);
         })
         it('TC-012 Placeholder for Add Name Field = Counter Name', function () {
             const actual = $$(general.addNameFieldLabel)[$$(general.addNameFieldLabel).length-2].getText();
-            expect(actual).toEqual(values.general.addNameFieldLabel);
+            expect(actual).toEqual(values.addNameFieldLabel);
         })
 
         it('TC-013  Label for Default Value Field = Enter Initial Count:', function () {
             const actual = $(general.defaultValueField).getValue();
-            expect(actual).toEqual(values.general.defaultValueField);
+            expect(actual).toEqual(values.defaultValueField);
         })
 
-        it('TC-014  Placeholder for Default Value Field Label', function () {
+        it('TC-014  Placeholder for Default Value Field Label = 50', function () {
             const actual = $$(general.defaultValueFieldLabel)[$$(general.addNameFieldLabel).length-1].getText();
-            expect(actual).toEqual(values.general.defaultValueFieldLabel);
+            expect(actual).toEqual(values.defaultValueFieldLabel);
         })
         it('TC-015 Add Counter = ADD COUNTER', function () {
             const actual = $(general.addCounterBtn).getText();
-            expect(actual).toEqual(values.general.addCounterBtn);
+            expect(actual).toEqual(values.addCounterBtn);
         })
 
     });
 
-
-
+    describe('Default Counter Elements exist', function () {
+        it('TC-016 Counter Name', function () {
+            const actual = $$(selectorCnt.counterName)[1].isDisplayed();
+            expect(actual).toEqual(true);
+        })
+        it('TC-017 Count Value', function () {
+            const actual = $(selectorCnt.countValue).isDisplayed();
+            expect(actual).toEqual(true);
+        })
+        it('TC-018 LLF', function () {
+            const actual = $(selectorCnt.lowerLimitField).isDisplayed();
+            expect(actual).toEqual(true);
+        })
+        it('TC-019 ULF', function () {
+            const actual = $(selectorCnt.upperLimitField).isDisplayed();
+            expect(actual).toEqual(true);
+        })
+        it('TC-020, TC-021 Default Sub and Add Buttons', function () {
+            const actual = $$(selectorCnt.blackBtn).filter(el => el.isDisplayed()).length;
+            const expected = 6;
+            expect(actual).toEqual(expected);
+        })
+    });
 });
