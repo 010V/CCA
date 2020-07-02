@@ -18,4 +18,16 @@ describe( 'Default functionality', () => {
         const result = $(toyotaSlct.general.selectVehicle).getText();
         expect(result).toEqual(toyotaExpd.general.selectVehicleT);
     });
+
+    it('Select shopping tool text is correct ', function () {
+        const result = $(toyotaSlct.general.selectShpTools).getText();
+        expect(result).toEqual(toyotaExpd.general.selectShp);
+    });
+
+    it('Videoplay button functionality is correct', function () {
+        $(toyotaSlct.general.playBtn).click();
+        const result = $(toyotaSlct.general.titleModal).isDisplayed();
+        expect(result).true;
+        browser.pause(3000);
+    });
 })

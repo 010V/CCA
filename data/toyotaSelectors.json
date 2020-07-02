@@ -1,6 +1,9 @@
 {
   "general": {
     "toyotaLabel": ".Toyota",
-    "selectVehicle": "[data-service='selectVehicles']"
+    "selectVehicle": "[data-service='selectVehicles']",
+    "selectShpTools": "[data-service='shoppingTools']",
+    "playBtn": "[data-di-id='#tfresh-btn-tfresh-btn-one-video-modal-cta']",
+    "titleModal": "#modal-title"
   }
 }
