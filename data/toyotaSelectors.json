@@ -1,5 +1,6 @@
 {
   "general": {
-    "toyotaLabel": ".Toyota"
+    "toyotaLabel": ".Toyota",
+    "selectVehicle": "[data-service='selectVehicles']"
   }
 }
